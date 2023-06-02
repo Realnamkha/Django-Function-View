@@ -1,0 +1,19 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<div class="header-bar">
+    <a href="{% url 'home' %}">Go back</a>
+</div>
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Username">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Password">
+        <input class="button" type="submit" value="login">
+    </form>
+    <p>Don't have an account?</p>
+    <a href="{% url 'register' %}">Register</a>
+</div>
+</div>
+{% endblock %}

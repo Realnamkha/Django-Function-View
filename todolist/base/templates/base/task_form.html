@@ -1,0 +1,11 @@
+{% extends 'base/main.html' %} {% block content %}
+<div class="header-bar">
+  <a href="{% url 'home' %}">Go back</a>
+</div>
+<div class="card-body">
+    <form method="post">
+        {% csrf_token %} {{ form.as_p }}
+        <input class="button" type="submit" value="Save" />
+      </form>
+</div>
+{% endblock %}
